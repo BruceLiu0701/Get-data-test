@@ -4,8 +4,10 @@
 
 1. 使用Vite + React.js + TailwindCSS 簡單完成這個project
 2. 實現簡單換頁以及查詢SID功能
+3. 主要組件放在src資料夾中，App組件中有使用axios發送網路請求的程式碼
 
-二、網頁截圖 :
+
+三、網頁截圖 :
 
 ![data get](https://github.com/BruceLiu0701/Get-data-test/assets/130199748/567801fc-acc3-42ae-ae97-5e1390706246)
 
