@@ -35,7 +35,7 @@ const App=()=>{
   }
   // 發第一次請求獲得TokenKey
   const getData=()=>{
-    axios.get('http://cloud.weyutech.com/API_TEST/api/WeyuLogin',{
+    axios.get('http://cloud.weyutech.com/api1/API_TEST/api/WeyuLogin',{
       headers:{
         UID:'DEMO',
         PWD:'DEMO'
@@ -56,10 +56,10 @@ const App=()=>{
         TokenKey
       },
       method:'post',
-      url:'http://cloud.weyutech.com/API_TEST/api/GetGrid'
+      url:'http://cloud.weyutech.com/api2/API_TEST/api/GetGrid'
     })
     .then(response=>{
-      // console.log(response.data.Grid_Data)
+      console.log(response.data.Grid_Data)
       setData(response.data.Grid_Data)
     })
     .catch((error)=>{
