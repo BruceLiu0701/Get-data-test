@@ -1,4 +1,4 @@
-![查詢SID](https://github.com/BruceLiu0701/Get-data-test/assets/130199748/0d539795-0b48-4ea2-b438-45fbaf25088e)# Get-data-test
+# Get-data-test
 
 一、簡介及功能說明 :
 
