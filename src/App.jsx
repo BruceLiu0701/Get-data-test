@@ -35,22 +35,16 @@ const App=()=>{
   }
   // 發第一次請求獲得TokenKey
   const getData=()=>{
-    axios.get('http://cloud.weyutech.com/API_TEST/api/WeyuLogin',{
+    return axios.get('http://cloud.weyutech.com/API_TEST/api/WeyuLogin',{
       headers:{
         UID:'DEMO',
         PWD:'DEMO'
       }
     })
-    .then(response=>{
-      return getInfo(response.data.TokenKey)
-    })
-    .catch((error)=>{
-      alert(error);
-    })
   }
   // 發第二次請求獲取數據
   const getInfo=(TokenKey)=>{
-    axios({
+    return axios({
       headers:{
         SID:'323017369146913',
         TokenKey
@@ -58,16 +52,15 @@ const App=()=>{
       method:'post',
       url:'http://cloud.weyutech.com/API_TEST/api/GetGrid'
     })
-    .then(response=>{
-      console.log(response.data.Grid_Data)
-      setData(response.data.Grid_Data)
-    })
-    .catch((error)=>{
-      alert(error)
-    })
+  }
+  const mainFunc=async()=>{
+    let response=await getData();                    // 可直接抽取到getData成功Promise resolve()的值
+    let result=await getInfo(response.data.TokenKey);
+    console.log(result.data.Grid_Data)
+    setData(result.data.Grid_Data)
   }
   useEffect(()=>{
-    getData();
+    mainFunc();
   },[])
 
   return(
